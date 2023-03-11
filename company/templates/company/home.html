@@ -1,0 +1,23 @@
+{% extends 'company/base.html' %}
+
+{% block content %}
+    <div class="container">
+      <h1>This is the main heading</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi possimus numquam optio harum illo quaerat facilis ab atque ipsum eum vitae sint ipsam accusamus, soluta sed eveniet itaque laudantium cum?</p>
+      <div class="row">
+          {% for post in all_posts %}
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <img src="{{ post.featured_pic.url }}" alt="{{post.title}}" class="img-fluid"/>
+                <h5 class="card-title">{{ post.title}}</h5>
+                <p class="card-text">{{ post.desciption }}</p>
+                <a href="blog/{{ post.id }}" class="btn btn-primary">Learn more →</a>
+            
+              </div>
+            </div>
+          </div>        
+          {% endfor %}
+        </div>
+    </div> 
+{% endblock content %}

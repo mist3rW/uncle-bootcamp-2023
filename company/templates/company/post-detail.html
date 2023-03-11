@@ -1,0 +1,14 @@
+<!-- EP5 Week6 -->
+{% extends 'company/base.html' %}
+
+{% block content %}
+    <div class="container">
+      <div class="col-sm-8">
+          <h1>{{ single_post.title }}</h1>
+          <p>Created: {{ single_post.date_created | date }} Last update: {{ single_post.date_updated | date }}</p>
+          <img src="{{ single_post.featured_pic.url }}" alt="{{ single_post.title }}" class="img-fluid"">
+          <!-- safe ต้องใส่เพื่อ Filter ให้ Text Editor ไม่แสดงค่าเป็น HTML ที่หน้าเว็บ -->
+          <p>{{ single_post.body | safe }}</p>
+      </div>
+    </div> 
+{% endblock content %}

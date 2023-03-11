@@ -1,0 +1,30 @@
+<!-- EP7 Week8-->
+{% extends 'company/base.html' %}
+{% block content %}
+
+    <div class="container">
+      <div class="col-sm-8">
+          <h1>Add New Book</h1>
+          <p>เพิ่มหนังสือใหม่</p>
+          <form method="POST">
+            {% csrf_token %} <!-- Django บังคับใส่ token ทุกครั้งที่ใช้ฟอรืมรูปแบบ POST -->
+            <div class="form-group">
+                <label for="book_title">ชื่อหนังสือ</label>
+                <input type="text" class="form-control" name="book_title" placeholder="Title" id="book_title">
+            </div>
+
+            <div class="form-group">
+                <label for="book_description">รายละเอียดหนังสือ</label>
+                <textarea name="book_description" class="form-control" id="book_description" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="book_price">ราคา</label>
+                <input type="text" class="form-control" name="book_price" placeholder="Title" id="book_price">
+            </div>
+
+            <input class="btn btn-primary" type="submit" value="Submit">
+          </form>
+      </div>
+    </div> 
+{% endblock content %}

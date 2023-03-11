@@ -1,0 +1,16 @@
+<!-- EP7 Week8-->
+{% extends 'company/base.html' %}
+
+{% block content %}
+    <div class="container">
+      <div class="col-sm-8">
+          <h1>Contact Us</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi quibusdam unde modi similique facilis quidem, nesciunt quia fuga, molestias totam earum harum reiciendis! Inventore odit nam animi obcaecati ex culpa?</p>
+          <form action="/contact" method="POST">
+            {% csrf_token %} <!-- Django บังคับใส่ token ทุกครั้งที่ใช้ฟอรืมรูปแบบ POST -->
+            {{ form.as_p }} <!-- render form มาจาก server (ฝั่ง backend) as_p คือ as paragraph -->
+            <input class="btn btn-primary" type="submit" value="Submit">
+          </form>
+      </div>
+    </div> 
+{% endblock content %}
